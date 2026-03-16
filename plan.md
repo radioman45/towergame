@@ -6,7 +6,7 @@
 ## Initial Plan
 - Use a single `index.html` file with:
   - embedded CSS
-  - Three.js CDN
+  - local `three.min.js` runtime next to the HTML file
   - one large inline script
 - Build the project in the following order:
   1. Scene setup with OrthographicCamera, renderer, lights, and battlefield grid
@@ -27,17 +27,17 @@
 - [x] Add merge system for exactly 3 identical tanks
 - [x] Add promotion, sell, weapon swap, and upgrades
 - [x] Add progress log and session handoff files
-- [ ] Run browser console inspection on live page
-- [ ] Fix the blank-screen / non-rendering runtime issue if it still reproduces
+- [x] Run browser runtime inspection on live page (`chrome --headless --dump-dom`)
+- [x] Fix the blank-screen / non-rendering runtime issue caused by blocked CDN loading
 - [ ] Playtest economy, wave balance, and merge progression
 - [ ] Improve visual feedback for placement and combat readability
 - [ ] Push final verified playable build after runtime validation
 
 ## Immediate Next Steps
-1. Open `index.html` in browser with devtools console visible.
-2. Identify the first runtime error if the map still does not render.
-3. Patch the rendering/game-loop issue and retest placement, wave start, and merge flow.
-4. Rebalance costs and damage after a short playtest.
+1. Playtest placement, wave start, upgrade flow, and merge flow in a normal browser session.
+2. Rebalance costs, damage, and wave pacing after a short playtest.
+3. Improve placement preview, targeting, and combat readability feedback.
+4. Push the verified build and updated handoff files.
 
 ## Handoff Notes
 - Remote target requested by user: `https://github.com/radioman45/towergame`
